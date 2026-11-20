@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRoute - Travel Planner & Comparison</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+    
+        <header>
+            <h1>SmartRoute Travel Planner</h1>
+            <p>Compare transit modes, costs, and live travel times instantly.</p>
+        </header>
+
+        
+        <div class="main-grid">
+            
+            
+            <div class="control-panel">
+                <div class="search-box">
+                    <h2>Plan Your Trip (Dehradun)</h2>
+                    
+                    <div class="input-group">
+                        <label for="startLocation">From Location</label>
+                        <select id="startLocation">
+                            <option value="doon_university">Doon University Campus</option>
+                            <option value="clock_tower">Clock Tower (Ghantaghar)</option>
+                            <option value="railway_station">Dehradun Railway Station</option>
+                            <option value="isbt">ISBT Dehradun</option>
+                            <option value="pacific_mall">Pacific Mall (Rajpur Rd)</option>
+                            <option value="fri">Forest Research Institute (FRI)</option>
+                            <option value="robbers_cave">Robber's Cave (Guchhupani)</option>
+                            <option value="paltan_bazaar">Paltan Bazaar</option>
+                            <option value="rajpur_village">Rajpur Village</option>
+                            <option value="raipur">Raipur Chowk</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="endLocation">To Destination</label>
+                        <select id="endLocation">
+                            <option value="clock_tower">Clock Tower (Ghantaghar)</option>
+                            <option value="doon_university">Doon University Campus</option>
+                            <option value="railway_station">Dehradun Railway Station</option>
+                            <option value="isbt">ISBT Dehradun</option>
+                            <option value="pacific_mall">Pacific Mall (Rajpur Rd)</option>
+                            <option value="fri">Forest Research Institute (FRI)</option>
+                            <option value="robbers_cave">Robber's Cave (Guchhupani)</option>
+                            <option value="paltan_bazaar">Paltan Bazaar</option>
+                            <option value="rajpur_village">Rajpur Village</option>
+                            <option value="raipur">Raipur Chowk</option>
+                        </select>
+                    </div>
+
+                    <button id="searchBtn">Find Routes</button>
+                </div>
+
+                
+                <div id="routeSelectorSection" class="route-section" style="display: none;">
+                    <h3>Available Routes</h3>
+                    <div id="routeButtonsContainer" class="route-buttons-grid"></div>
+                </div>
+
+                
+                <div class="results-section">
+                    <h3>Transport Options</h3>
+                    <div id="transportCardsContainer" class="cards-grid">
+                        <p class="placeholder-text">Select locations and click 'Find Routes' to compare options.</p>
+                    </div>
+                </div>
+
+                
+                <div class="history-section">
+                    <h3>Recent Searches</h3>
+                    <ul id="historyList"><li>No recent searches</li></ul>
+                </div>
+            </div>
+
+            
+            <div class="map-panel">
+                <div id="map"></div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    
+    
+    <script src="routing.js"></script>
+    <script src="transport.js"></script>
+    <script src="storage.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
